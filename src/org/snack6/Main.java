@@ -1,17 +1,22 @@
 package org.snack6;
 
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
+import java.util.Scanner;
+
 public class Main {
     public static void main(String[] args) {
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
 
-        for (int i = 1; i <= 5; i++) {
-            //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-            // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-            System.out.println("i = " + i);
-        }
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Inserisci il numero di secondi: ");
+        int secondi = scanner.nextInt();
+        scanner.close();
+
+        int ore = secondi / 3600;
+        int minuti = (secondi % 3600) / 60;
+        int restantiSecondi = secondi % 60;
+
+        String tempo = String.format("%02d:%02d:%02d", ore, minuti, restantiSecondi);
+
+        System.out.println("Tempo convertito: " + tempo);
     }
 }
