@@ -1,17 +1,35 @@
 package org.snack5;
 
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
+import java.util.Scanner;
+
 public class Main {
     public static void main(String[] args) {
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
+        // Input dall'utente
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Inserisci una testo: ");
+        String input = scanner.nextLine();
+        scanner.close();
 
-        for (int i = 1; i <= 5; i++) {
-            //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-            // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-            System.out.println("i = " + i);
+        // Inizializzo i contatori
+        int caratteriAlfabetici = 0;
+        int numeri = 0;
+        int simboliNonAlfanumerici = 0;
+
+        // Ciclo ogni carattere del testo
+        for (int i = 0; i < input.length(); i++) {
+            char carattere = input.charAt(i);
+            if (Character.isLetter(carattere)) {
+                caratteriAlfabetici++;
+            } else if (Character.isDigit(carattere)) {
+                numeri++;
+            } else {
+                simboliNonAlfanumerici++;
+            }
         }
+
+        // Stampo
+        System.out.println("Caratteri alfabetici: " + caratteriAlfabetici);
+        System.out.println("Numeri: " + numeri);
+        System.out.println("Simboli non alfanumerici: " + simboliNonAlfanumerici);
     }
 }
