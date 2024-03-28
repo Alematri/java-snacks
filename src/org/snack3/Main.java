@@ -1,17 +1,20 @@
 package org.snack3;
 
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[] args) {
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
+        int[] number = {191, 1, 333, 2, 455, 4, 898, 5, 339, 6};
 
-        for (int i = 1; i <= 5; i++) {
-            //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-            // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-            System.out.println("i = " + i);
+        // Inizializzo la variabile che mi darà la somma
+        int sommaDispari = 0;
+
+        // Sommo gli elementi in posizione dispari
+        for (int i = 1; // La inizializzo da 1 anzichè 0 perchè 0 è pari
+             i < number.length; // così durante il ciclo non supero la lunghezza dell'array
+             i += 2) { // dopo ogni iterazione incremento il contatore di 2 invece che di 1 per passare al prossimo dispari
+
+            sommaDispari += number[i]; // aggiungo alla variabile il numero che ho ottenuto dalle iterazioni
         }
+
+        System.out.println("La somma degli elementi in posizione dispari è: " + sommaDispari);
     }
 }
